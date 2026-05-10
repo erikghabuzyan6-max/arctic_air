@@ -1,211 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ArcticAir HVAC</title>
-
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-body {
-  color: white;
-  background: black;
-}
-
-/* VIDEO BACKGROUND */
-.video-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.video-bg video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.4);
-}
-
-/* NAV */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 14px 16px;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(10px);
-  z-index: 100;
-  font-size: 14px;
-}
-
-/* HERO */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 20px;
-}
-
-.hero h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  opacity: 0.8;
-  font-size: 14px;
-  max-width: 600px;
-}
-
-.buttons {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 80%;
-  max-width: 280px;
-}
-
-button {
-  padding: 14px;
-  border-radius: 12px;
-  border: none;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-/* PRIMARY */
-.call {
-  background: #3b82f6;
-  color: white;
-}
-
-/* SECONDARY */
-.sms {
-  background: rgba(255,255,255,0.15);
-  color: white;
-}
-
-/* SECTIONS */
-.section {
-  padding: 60px 16px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-h2 {
-  margin-bottom: 14px;
-}
-
-/* CARDS */
-.cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-}
-
-.card {
-  background: rgba(255,255,255,0.08);
-  padding: 16px;
-  border-radius: 14px;
-}
-
-/* MAP */
-.map {
-  width: 100%;
-  height: 250px;
-  border-radius: 14px;
-  border: none;
-}
-
-/* DESKTOP */
-@media(min-width: 768px) {
-  .hero h1 { font-size: 56px; }
-  .cards { grid-template-columns: repeat(3, 1fr); }
-  .buttons { flex-direction: row; max-width: 400px; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arctic Air HVAC | AC Repair Austin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #0A2540;
+            --accent: #00B4FF;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.9)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+        }
+        
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #00B4FF;
+            transform: translateY(-2px);
+        }
+        
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        
+        .blue-button {
+            background: linear-gradient(135deg, #00B4FF, #0099DD);
+            transition: all 0.3s ease;
+        }
+        
+        .blue-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgb(0 180 255 / 0.3);
+        }
+    </style>
 </head>
+<body class="bg-[#0A2540] text-white">
+    <!-- HEADER -->
+    <header class="bg-[#0A2540]/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-[#00B4FF] rounded-xl flex items-center justify-center text-2xl font-bold text-[#0A2540]">
+                    ❄️
+                </div>
+                <div>
+                    <span class="text-2xl font-bold tracking-tight">Arctic Air</span>
+                    <span class="text-[#00B4FF] text-sm block -mt-1">HVAC</span>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#" class="nav-link">Services</a>
+                <a href="#" class="nav-link">Why Us</a>
+                <a href="#" class="nav-link">Gallery</a>
+                <a href="#" class="nav-link">Reviews</a>
+                <a href="#" class="nav-link">FAQ</a>
+            </nav>
+            
+            <div class="flex items-center gap-4">
+                <a href="tel:8005551234" class="hidden sm:flex items-center gap-2 text-[#00B4FF] font-semibold">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>(800) 555-1234</span>
+                </a>
+                <button onclick="document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' })"
+                        class="blue-button px-6 py-3 rounded-2xl font-semibold flex items-center gap-2 text-sm">
+                    <i class="fa-solid fa-calendar"></i>
+                    FREE ESTIMATE
+                </button>
+            </div>
+        </div>
+    </header>
 
-<body>
+    <!-- HERO -->
+    <section class="hero-bg h-screen flex items-center relative">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full text-sm mb-6 border border-white/20">
+                <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                24/7 EMERGENCY SERVICE AVAILABLE
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+                Fast. Reliable.<br>
+                <span class="text-[#00B4FF]">AC Repair</span> Experts
+            </h1>
+            
+            <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                Professional HVAC services for homes and businesses in Central Texas. 
+                Same-day repairs, expert installations, and 100% satisfaction guaranteed.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' })"
+                        class="blue-button px-10 py-5 rounded-3xl text-lg font-semibold flex items-center justify-center gap-3 mx-auto sm:mx-0">
+                    <i class="fa-solid fa-phone"></i>
+                    CALL (800) 555-1234
+                </button>
+                <button onclick="document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' })"
+                        class="border border-white/40 hover:border-white/80 px-8 py-5 rounded-3xl text-lg font-medium flex items-center justify-center gap-3">
+                    GET FREE ESTIMATE
+                </button>
+            </div>
+            
+            <div class="mt-12 flex justify-center items-center gap-8 text-sm">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-[#00B4FF]"></i>
+                    <span>Licensed & Insured</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-clock text-[#00B4FF]"></i>
+                    <span>Same Day Service</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-star text-yellow-400"></i>
+                    <span>4.9 (2,400+ reviews)</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center">
+            <span class="text-xs tracking-widest mb-2">SCROLL FOR MORE</span>
+            <i class="fa-solid fa-chevron-down animate-bounce text-2xl"></i>
+        </div>
+    </section>
 
-<!-- VIDEO BACKGROUND -->
-<div class="video-bg">
-  <video autoplay muted loop>
-    <source src="https://cdn.coverr.co/videos/coverr-air-conditioner-repair-7646/1080p.mp4">
-  </video>
-</div>
+    <!-- SERVICES -->
+    <section class="py-20 bg-[#0F2B4F]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-[#00B4FF] font-semibold tracking-wider">WHAT WE DO</span>
+                <h2 class="text-4xl font-bold mt-3">Complete HVAC Solutions</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Cards -->
+                <div class="service-card bg-[#0A2540] border border-white/10 rounded-3xl p-8 hover:border-[#00B4FF]/30">
+                    <div class="w-14 h-14 bg-[#00B4FF]/10 text-[#00B4FF] rounded-2xl flex items-center justify-center text-3xl mb-6">
+                        ❄️
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">AC Repair</h3>
+                    <p class="text-gray-400 mb-6">Fast diagnostics and same-day repair for any make or model.</p>
+                    <a href="#" class="text-[#00B4FF] font-medium flex items-center gap-2">Schedule Repair →</a>
+                </div>
+                
+                <div class="service-card bg-[#0A2540] border border-white/10 rounded-3xl p-8 hover:border-[#00B4FF]/30">
+                    <div class="w-14 h-14 bg-[#00B4FF]/10 text-[#00B4FF] rounded-2xl flex items-center justify-center text-3xl mb-6">
+                        🏠
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">AC Installation</h3>
+                    <p class="text-gray-400 mb-6">Energy-efficient systems sized and installed to last decades.</p>
+                    <a href="#" class="text-[#00B4FF] font-medium flex items-center gap-2">Get Installed →</a>
+                </div>
+                
+                <div class="service-card bg-[#0A2540] border border-white/10 rounded-3xl p-8 hover:border-[#00B4FF]/30">
+                    <div class="w-14 h-14 bg-[#00B4FF]/10 text-[#00B4FF] rounded-2xl flex items-center justify-center text-3xl mb-6">
+                        🔥
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Heating Repair</h3>
+                    <p class="text-gray-400 mb-6">Furnace and heat pump service for reliable winter comfort.</p>
+                    <a href="#" class="text-[#00B4FF] font-medium flex items-center gap-2">Schedule Service →</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- NAV -->
-<nav>
-  <div>ArcticAir HVAC</div>
-  <div>(800) 555-1234</div>
-</nav>
+    <!-- WHY US -->
+    <section class="py-20 bg-[#0A2540]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-5">
+                    <span class="text-[#00B4FF]">TRUSTED SINCE 2003</span>
+                    <h2 class="text-4xl font-bold mt-3 leading-tight">The Trusted Choice for HVAC in Central Texas</h2>
+                    <p class="mt-6 text-gray-400 text-lg">
+                        Over 25,000 homes and businesses served. Family-owned and operated with honest pricing and expert technicians.
+                    </p>
+                    
+                    <div class="mt-10 grid grid-cols-2 gap-8">
+                        <div>
+                            <div class="text-5xl font-bold text-[#00B4FF]">25K+</div>
+                            <div class="text-gray-400">Homes Served</div>
+                        </div>
+                        <div>
+                            <div class="text-5xl font-bold text-[#00B4FF]">20+</div>
+                            <div class="text-gray-400">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-7 grid grid-cols-2 gap-6">
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <i class="fa-solid fa-shield-halved text-3xl text-[#00B4FF] mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold">Licensed & Insured</h4>
+                                <p class="text-gray-400 text-sm">Fully certified technicians and full liability coverage.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fa-solid fa-bolt text-3xl text-[#00B4FF] mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold">Same-Day Service</h4>
+                                <p class="text-gray-400 text-sm">Most repairs completed the same day you call.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <i class="fa-solid fa-phone-volume text-3xl text-[#00B4FF] mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold">24/7 Emergency</h4>
+                                <p class="text-gray-400 text-sm">Real humans answering the phone any time.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fa-solid fa-handshake text-3xl text-[#00B4FF] mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold">Satisfaction Guarantee</h4>
+                                <p class="text-gray-400 text-sm">We make it right — guaranteed in writing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- HERO -->
-<section class="hero">
-  <h1>Fast HVAC Repair</h1>
-  <p>24/7 emergency service. Licensed technicians. Same-day repairs.</p>
+    <!-- TESTIMONIALS -->
+    <section class="py-20 bg-[#0F2B4F]">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Loved by Central Texas Homeowners</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-[#0A2540] p-8 rounded-3xl">
+                    <p class="italic text-gray-300">"AC died on the hottest day. Arctic Air had a tech at my door in under two hours. Lifesavers!"</p>
+                    <div class="mt-8 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-600 rounded-full"></div>
+                        <div>
+                            <div>Sarah Mitchell</div>
+                            <div class="text-xs text-gray-500">Austin, TX</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-[#0A2540] p-8 rounded-3xl">
+                    <p class="italic text-gray-300">"Most professional HVAC company we've worked with. Honest pricing and excellent service."</p>
+                    <div class="mt-8 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-600 rounded-full"></div>
+                        <div>
+                            <div>James Carter</div>
+                            <div class="text-xs text-gray-500">Restaurant Owner</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-[#0A2540] p-8 rounded-3xl">
+                    <p class="italic text-gray-300">"Energy bill dropped almost 30% after the new install. Highly recommend!"</p>
+                    <div class="mt-8 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-600 rounded-full"></div>
+                        <div>
+                            <div>Priya Patel</div>
+                            <div class="text-xs text-gray-500">Round Rock, TX</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="buttons">
-    <button class="call" onclick="window.location.href='tel:8005551234'">
-       Call Now
-    </button>
+    <!-- CONTACT / CTA -->
+    <section id="contact-section" class="py-24 bg-[#0A2540]">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold mb-6">Need AC Help Today?</h2>
+            <p class="text-2xl text-gray-300 mb-10">Call us now for same-day service or get a free estimate.</p>
+            
+            <a href="tel:8005551234" 
+               class="inline-flex items-center justify-center gap-4 bg-white text-[#0A2540] hover:bg-gray-100 transition-colors text-3xl font-bold px-16 py-8 rounded-3xl mb-8">
+                <i class="fa-solid fa-phone text-4xl"></i>
+                (800) 555-1234
+            </a>
+            
+            <p class="text-gray-400">Available 24/7 • No overtime fees on emergencies</p>
+        </div>
+    </section>
 
-    <button class="sms" onclick="window.location.href='sms:8005551234'">
-       Text Us
-    </button>
-  </div>
-</section>
+    <!-- FOOTER -->
+    <footer class="bg-black/40 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div>
+                    <div class="flex items-center gap-3 text-2xl font-bold mb-4">
+                        ❄️ Arctic Air HVAC
+                    </div>
+                    <p class="text-gray-400">Family-owned since 2003. Serving Greater Austin & Central Texas.</p>
+                    <div class="mt-6 text-sm text-gray-400">
+                        License #TACLA00012345C
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li>AC Repair</li>
+                        <li>AC Installation</li>
+                        <li>Heating Repair</li>
+                        <li>Maintenance Plans</li>
+                        <li>Duct Cleaning</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li>About Us</li>
+                        <li>Reviews</li>
+                        <li>Gallery</li>
+                        <li>Careers</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <div class="space-y-3 text-gray-400">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>(800) 555-1234</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>service@arcticair.com</span>
+                        </div>
+                        <div class="pt-4">
+                            <span class="block text-xs uppercase tracking-widest">Emergency Service</span>
+                            <span class="text-[#00B4FF] font-semibold">24 Hours • 7 Days</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 mt-16 pt-8 text-center text-xs text-gray-500">
+                © 2026 Arctic Air HVAC • All Rights Reserved • Built for Comfort
+            </div>
+        </div>
+    </footer>
 
-<!-- SERVICES -->
-<section class="section">
-  <h2>Services</h2>
-  <div class="cards">
-    <div class="card">AC Repair</div>
-    <div class="card">Installation</div>
-    <div class="card">Heating Repair</div>
-    <div class="card">Emergency Service</div>
-    <div class="card">Maintenance</div>
-    <div class="card">Duct Cleaning</div>
-  </div>
-</section>
-
-<!-- WHY -->
-<section class="section">
-  <h2>Why Choose Us</h2>
-  <div class="cards">
-    <div class="card">Licensed & Insured</div>
-    <div class="card">24/7 Emergency</div>
-    <div class="card">Same Day Service</div>
-    <div class="card">Transparent Pricing</div>
-  </div>
-</section>
-
-<!-- MAP -->
-<section class="section">
-  <h2>Our Location</h2>
-
-  <iframe
-    class="map"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763703.5958716534!2d-78.40924138906283!3d42.71995189818721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2z0J3RjNGOLdCZ0L7RgNC6!5e1!3m2!1sru!2sus!4v1778377540758!5m2!1sru!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
-  </iframe>
-</section>
-
+    <script>
+        // Tailwind script already included via CDN
+        console.log('%cArctic Air HVAC Website Ready', 'color: #00B4FF; font-size: 14px;');
+    </script>
 </body>
 </html>
